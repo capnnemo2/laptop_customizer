@@ -8,13 +8,6 @@ import './App.css';
 import Form from './Form/Form.js';
 import Summary from './Summary/Summary';
 
-// This object will allow us to
-// easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
-
 class App extends Component {
   constructor(props) {
     super(props);
