@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import Form from './Form/Form.js';
 import Summary from './Summary/Summary';
@@ -38,10 +37,6 @@ export default class App extends Component {
   };
 
   render() {
-    
-
-    
-
     return (
       <div className="App">
         <header>
@@ -54,10 +49,7 @@ export default class App extends Component {
             {...this.state}
             {...this.props}
           />
-          
           <Summary {...this.state} {...this.props} />
-
-          
         </main>
       </div>
     );
