@@ -3,7 +3,7 @@ import './Form.css';
 import slugify from 'slugify';
 import USCurrencyFormat from '../USCurrencyFormat/USCurrencyFormat';
 
-class Form extends React.Component {
+export default class Form extends React.Component {
     render() {
         const features = Object.keys(this.props.features).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
@@ -16,8 +16,8 @@ class Form extends React.Component {
                     id={itemHash}
                     className="feature__option"
                     name={slugify(feature)}
-                    checked={item.name === this.state.selected[feature].name}
-                    onChange={e => this.updateFeature(feature, item)}
+                    checked={item.name === this.props.selected[feature].name}
+                    onChange={e => this.props.updateFeature(feature, item)}
                   />
                   <label htmlFor={itemHash} className="feature__label">
                     {item.name} ({USCurrencyFormat.format(item.cost)})
@@ -35,6 +35,7 @@ class Form extends React.Component {
               </fieldset>
             );
           });
+          
         return (
             <form className="main__form">
                 <h2>Customize your laptop</h2>
@@ -43,5 +44,3 @@ class Form extends React.Component {
         )
     }
 }
-
-export default Form;
